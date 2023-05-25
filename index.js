@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("container");
-  const selectedParagraph = paragraphs[Math.floor(Math.random() * paragraphs.length)];
+  
+  const selectedParagraphId = Math.floor(Math.random() * paragraphs.length);
+  const selectedParagraph = paragraphs[selectedParagraphId];
+  
   const dynamicParagraph = document.getElementById("dynamic-paragraph");
   const userInput = document.getElementById("user-input");
   const buttonStart = document.getElementById("button-start");
@@ -31,7 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
       
       clearInterval(intervalHandle);
       endTimer();
-      timerElement.innerText = `Timer: ${formattedTime(durationInSeconds())}`;
+      const time = durationInSeconds();
+      timerElement.innerText = `Timer: ${formattedTime(time)}`;
+      
+      const numberOfWords = selectedParagraph.split(/\s+/).length;
+      const wordsPerMinute = Math.floor(numberOfWords / (time / 60));
+      
+      successMessage.innerText = `Congratulations! You completed the paragraph at ${wordsPerMinute} words per minute.`;
       
       show(successMessage);
       container.classList.add("success");
