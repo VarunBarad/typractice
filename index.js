@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
       
       show(successMessage);
       container.classList.add("success");
+      
+      updateRecords(selectedParagraphId, time);
     } else {
       hide(successMessage);
       container.classList.remove("success");
@@ -52,6 +54,27 @@ document.addEventListener("DOMContentLoaded", function () {
   
   buttonStart.focus();
 });
+
+const updateRecords = function (selectedParagraphId, timeTakenInSeconds) {
+  let database = JSON.parse(localStorage.getItem("database"));
+  if (!database) {
+    database = {
+      versionCode: 1,
+      records: {},
+    };
+  }
+  
+  if (!database.records[`${selectedParagraphId}`]) {
+    database.records[`${selectedParagraphId}`] = [];
+  }
+  
+  database.records[`${selectedParagraphId}`].push({
+    createdAt: (new Date()).toISOString(),
+    timeTakenInSeconds: timeTakenInSeconds,
+  });
+  
+  localStorage.setItem("database", JSON.stringify(database));
+};
 
 const formattedTime = function (seconds) {
   const minutes = Math.floor(seconds / 60);
