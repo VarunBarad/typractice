@@ -7,7 +7,8 @@
   <title>Typractice - Practice your typing speed</title>
   <meta name="description" content="A simple website to practice your typing.">
   
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
+  <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
   
   <link rel="stylesheet" type="text/css" href="index.css">
   
@@ -17,20 +18,19 @@
 <body>
 <header>
   <h1>🏃Typractice ⌨️</h1>
+  <div id="timer">Timer: 00:00</div>
 </header>
 
-<main>
-  <div id="container">
-    <p id="dynamic-paragraph"></p>
-    <textarea id="user-input" class="hide"></textarea>
-    <div id="timer">Timer: 00:00</div>
-    <button id="button-start">Start</button>
-    <div id="success-message" class="hide">Congratulations! You typed the paragraph correctly.</div>
-  </div>
+<main id="container">
+  <p id="dynamic-paragraph"></p>
+  <textarea id="user-input" class="hide"></textarea>
+  
+  <button id="button-start">Start</button>
+  <div id="success-message" class="hide">Congratulations! You typed the paragraph correctly.</div>
 </main>
 
 <footer>
-
+  <a href="https://varunbarad.com"><p>Made with 🤖 by Varun Barad</p></a>
 </footer>
 </body>
 </html>
