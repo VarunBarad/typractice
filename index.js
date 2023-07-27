@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("container");
   
@@ -76,16 +78,6 @@ const updateRecords = function (selectedParagraphId, timeTakenInSeconds) {
   localStorage.setItem("database", JSON.stringify(database));
 };
 
-const formattedTime = function (seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
-  
-  const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
-  const formattedSeconds = remainingSeconds < 10 ? `0${Math.floor(remainingSeconds)}` : `${Math.floor(remainingSeconds)}`;
-  
-  return `${formattedMinutes}:${formattedSeconds}`;
-};
-
 let startTime = null;
 let endTime = null;
 
@@ -104,14 +96,4 @@ const durationInSeconds = function () {
   } else {
     return (endTime - startTime) / 1000;
   }
-};
-
-const show = (element) => {
-  element.classList.add("show");
-  element.classList.remove("hide");
-};
-
-const hide = (element) => {
-  element.classList.add("hide");
-  element.classList.remove("show");
 };

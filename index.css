@@ -1,5 +1,6 @@
 * {
-  --color-success: green;
+  --color-success: #008000;
+  --color-success-translucent: #00800080;
   --color-success-text: #ffffff;
   --color-footer-text: #e41b1b;
 }
