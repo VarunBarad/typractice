@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   dynamicParagraph.textContent = selectedParagraph;
   
   buttonStart.addEventListener('click', function () {
+    userInput.innerText = '';
     show(userInput);
     hide(buttonStart);
     userInput.focus({focusVisible: true});
