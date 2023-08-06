@@ -11,6 +11,7 @@
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
   
   <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="table.css">
   
   <script src="lib/chart-4.3.2.js"></script>
   
@@ -25,6 +26,23 @@
 
 <main id="container">
   <canvas id="chart"></canvas>
+  <hr>
+  <table id="stats-table">
+<!--    <caption>Some title goes here</caption>-->
+    <thead>
+    <tr>
+      <th>Paragraph</th>
+      <th>Attempts</th>
+      <th>Best Time (mins)</th>
+      <th>Worst Time (mins)</th>
+      <th>Average Time (mins)</th>
+      <th>Best WPM</th>
+      <th>Worst WPM</th>
+      <th>Average WPM</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </main>
 
 <footer>
