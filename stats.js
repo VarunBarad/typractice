@@ -37,8 +37,8 @@ const updateTable = (records) => {
         bestTimeInSeconds: Math.min(...group.records.map(record => record.timeTakenInSeconds)),
         worstTimeInSeconds: Math.max(...group.records.map(record => record.timeTakenInSeconds)),
         averageTimeInSeconds: Math.floor(group.records.reduce((sum, record) => sum + record.timeTakenInSeconds, 0) / group.records.length),
-        bestWordsPerMinute: Math.min(...group.records.map(record => record.wordsPerMinute)),
-        worstWordsPerMinute: Math.max(...group.records.map(record => record.wordsPerMinute)),
+        bestWordsPerMinute: Math.max(...group.records.map(record => record.wordsPerMinute)),
+        worstWordsPerMinute: Math.min(...group.records.map(record => record.wordsPerMinute)),
         averageWordsPerMinute: Math.floor(group.records.reduce((sum, record) => sum + record.wordsPerMinute, 0) / group.records.length),
       };
     });
